@@ -30,28 +30,118 @@
   </nav>
 
   <main class="pt-[60px] pb-[80px] px-4">
+    <!-- 题目说明 -->
+    <section class="mb-6">
+      <h2 class="text-lg font-bold text-primary mb-2">题目</h2>
+      <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+        <li>输入流程类文字内容并生成Visio流程图</li>
+        <li>根据流程图内容自动生成文字说明</li>
+      </ul>
+    </section>
+
+    <!-- TODO事项 -->
+    <section class="mb-6">
+      <h2 class="text-lg font-bold text-primary mb-2">具体 TODO</h2>
+      <div class="space-y-4 text-sm text-gray-700">
+        <div>
+          <p class="font-semibold">1. 输入流程类文字并生成Visio流程图</p>
+          <ul class="list-decimal list-inside pl-4">
+            <li>Diffy平台创建工作流</li>
+            <li>LLM分析并提取流程结构</li>
+            <li>使用开源工具生成流程图结构图</li>
+            <li>使用Python文件转为Visio图</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold">2. 提供流程图生成解读文字说明</p>
+          <ul class="list-decimal list-inside pl-4">
+            <li>Diffy平台创建工作流</li>
+            <li>调用接口获取流程图结构</li>
+            <li>分析流程图输出</li>
+            <li>输出标准解读稿</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- 流程图展示 -->
     <section class="mb-6">
       <h2 class="text-lg font-bold text-primary mb-2">流程图展示</h2>
       <div class="rounded-lg overflow-hidden border shadow cursor-pointer">
-        <!-- 缩略图，可小尺寸 -->
         <img
           src="https://liujulin-dev.github.io/Repository/ProcessB_Image.png"
           alt="流程图展示"
           class="w-full"
-          onclick="openModal('https://liujulin-dev.github.io/Repository/ProcessB_Image.png')"
+          onclick="openModal(this.src)"
         >
       </div>
     </section>
 
-    <!-- 可选：其他内容省略 ... -->
+    <!-- 评分标准 -->
+    <section>
+      <h2 class="text-lg font-bold text-primary mb-2">评分标准</h2>
+      <div class="text-sm text-gray-800 overflow-x-auto rounded-lg border border-gray-200 shadow">
+        <table class="min-w-full divide-y divide-gray-200 text-sm">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-3 py-2 text-left font-semibold text-gray-700">#</th>
+              <th class="px-3 py-2 text-left font-semibold text-gray-700">项目</th>
+              <th class="px-3 py-2 text-left font-semibold text-gray-700">评分项</th>
+              <th class="px-3 py-2 text-center font-semibold text-gray-700">分数</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-100">
+            <!-- Text 2 Visio -->
+            <tr class="bg-primary/10">
+              <td colspan="4" class="px-3 py-2 font-bold text-primary">Text 2 Visio</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2">1</td>
+              <td class="px-3 py-2">Text 2 Visio</td>
+              <td class="px-3 py-2">分析流程图生成结构化文本</td>
+              <td class="px-3 py-2 text-center">40</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2">2</td>
+              <td></td>
+              <td class="px-3 py-2">HTTP请求获取Visio文件</td>
+              <td class="px-3 py-2 text-center">20</td>
+            </tr>
+            <tr class="bg-gray-50 font-bold">
+              <td colspan="3" class="px-3 py-2 text-right">小计：</td>
+              <td class="px-3 py-2 text-center">60</td>
+            </tr>
+
+            <!-- Visio 2 Text -->
+            <tr class="bg-primary/10">
+              <td colspan="4" class="px-3 py-2 font-bold text-primary">Visio 2 Text</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2">3</td>
+              <td class="px-3 py-2">Visio 2 Text</td>
+              <td class="px-3 py-2">完成工作流搭建、跑通</td>
+              <td class="px-3 py-2 text-center">30</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2">4</td>
+              <td class="px-3 py-2">按场景分类</td>
+              <td class="px-3 py-2">能够按输入内容区分场景</td>
+              <td class="px-3 py-2 text-center">10</td>
+            </tr>
+            <tr class="bg-gray-50 font-bold">
+              <td colspan="3" class="px-3 py-2 text-right">小计：</td>
+              <td class="px-3 py-2 text-center">40</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
   </main>
 
-  <!-- 模态图大图查看 -->
+  <!-- 放大图片 Modal -->
   <div id="imageModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden">
     <span class="absolute top-4 right-4 text-white text-3xl cursor-pointer" onclick="closeModal()">&times;</span>
-    <img id="modalImage" src="" alt="高清流程图"
-         class="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-lg border border-white">
+    <img id="modalImage" class="max-w-full max-h-full rounded-lg shadow-lg" src="" alt="放大图片">
   </div>
 
   <!-- 返回按钮 -->
@@ -59,11 +149,10 @@
     <i class="fas fa-arrow-left text-2xl"></i>
   </a>
 
-  <!-- 模态脚本 -->
+  <!-- 模态框控制脚本 -->
   <script>
     function openModal(src) {
-      const modalImg = document.getElementById("modalImage");
-      modalImg.src = src;
+      document.getElementById("modalImage").src = src;
       document.getElementById("imageModal").classList.remove("hidden");
     }
 
@@ -71,6 +160,7 @@
       document.getElementById("imageModal").classList.add("hidden");
     }
 
+    // 点击背景关闭
     document.getElementById("imageModal").addEventListener("click", function(e) {
       if (e.target === this) closeModal();
     });
