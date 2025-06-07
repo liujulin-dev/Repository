@@ -67,8 +67,13 @@
     <!-- 流程图展示 -->
     <section class="mb-6">
       <h2 class="text-lg font-bold text-primary mb-2">流程图展示</h2>
-      <div class="rounded-lg overflow-hidden border shadow">
-        <img src="https://liujulin-dev.github.io/Repository/ProcessB_Image.png" alt="流程图展示" class="w-full">
+      <div class="rounded-lg overflow-hidden border shadow cursor-pointer">
+        <img
+          src="https://liujulin-dev.github.io/Repository/ProcessB_Image.png"
+          alt="流程图展示"
+          class="w-full"
+          onclick="openModal(this.src)"
+        >
       </div>
     </section>
 
@@ -133,9 +138,32 @@
     </section>
   </main>
 
+  <!-- 放大图片 Modal -->
+  <div id="imageModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden">
+    <span class="absolute top-4 right-4 text-white text-3xl cursor-pointer" onclick="closeModal()">&times;</span>
+    <img id="modalImage" class="max-w-full max-h-full rounded-lg shadow-lg" src="" alt="放大图片">
+  </div>
+
   <!-- 返回按钮 -->
   <a href="index.html" class="fixed bottom-6 right-6 w-[64px] h-[64px] bg-secondary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition-transform">
     <i class="fas fa-arrow-left text-2xl"></i>
   </a>
+
+  <!-- 模态框控制脚本 -->
+  <script>
+    function openModal(src) {
+      document.getElementById("modalImage").src = src;
+      document.getElementById("imageModal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").classList.add("hidden");
+    }
+
+    // 点击背景关闭
+    document.getElementById("imageModal").addEventListener("click", function(e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
 </body>
 </html>
