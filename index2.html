@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=375px, initial-scale=1.0">
+    <title>全员赋能大赛</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#E11D48'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '2px',
+                        DEFAULT: '4px',
+                        'md': '8px',
+                        'lg': '12px',
+                        'xl': '16px',
+                        '2xl': '20px',
+                        '3xl': '24px',
+                        'full': '9999px',
+                        'button': '4px'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white w-[375px] min-h-[762px] pb-[80px]">
+    <nav class="fixed top-0 w-full bg-white shadow-sm z-50 h-[56px] flex items-center justify-between px-4">
+        <div class="text-xl font-['Pacifico']">logo</div>
+        <button class="px-4 py-2 bg-primary text-white !rounded-button">立即报名</button>
+    </nav>
+
+    <div class="mt-[56px] relative">
+        <img src="https://ai-public.mastergo.com/ai/img_res/7b8ff1ce28042299ae50137ad68b96a4.jpg" 
+             class="w-full h-[200px] object-cover" alt="banner">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+            <div class="text-center text-white">
+                <h1 class="text-2xl font-bold mb-2">全员赋能大赛·实战来袭！</h1>
+                <p class="text-sm">热身赛Workshop-Hackathon 2.5</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-4">
+        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+            <h2 class="text-lg font-bold mb-4">📣 活动介绍</h2>
+            <p class="text-sm text-gray-600 leading-6">
+                这不是临时起意，这是全员赋能体系下的一场重头戏！作为6月总裁来访前的关键预热，我们将举办一场真正硬核的实操演练 —— AI驱动·工作流实战Workshop大赛！
+            </p>
+        </div>
+
+        <div class="mb-6">
+            <h2 class="text-lg font-bold mb-4">🔍 三大赛道</h2>
+            <div class="flex overflow-x-auto gap-4 pb-4">
+                <div class="flex-none w-[280px] bg-white rounded-lg shadow-md p-4">
+                    <div class="mb-3">
+                        <img src="https://ai-public.mastergo.com/ai/img_res/cb42d630e9fb11a8ae28cdd6ba9e605d.jpg" 
+                             class="w-[60px] h-[60px] rounded-lg" alt="track1">
+                    </div>
+                    <h3 class="font-bold mb-2">关怀不设限</h3>
+                    <p class="text-sm text-gray-600">让员工体验"被看见"的感觉</p>
+                </div>
+                <div class="flex-none w-[280px] bg-white rounded-lg shadow-md p-4">
+                    <div class="mb-3">
+                        <img src="https://ai-public.mastergo.com/ai/img_res/b873671981b8fde46f4c099c7b39559c.jpg" 
+                             class="w-[60px] h-[60px] rounded-lg" alt="track2">
+                    </div>
+                    <h3 class="font-bold mb-2">从需求到代码</h3>
+                    <p class="text-sm text-gray-600">打造D365 F&O开发的"需求即交付"体验</p>
+                </div>
+                <div class="flex-none w-[280px] bg-white rounded-lg shadow-md p-4">
+                    <div class="mb-3">
+                        <img src="https://ai-public.mastergo.com/ai/img_res/4598501dbb4fed7ea5906b5dbd7aa425.jpg" 
+                             class="w-[60px] h-[60px] rounded-lg" alt="track3">
+                    </div>
+                    <h3 class="font-bold mb-2">流程速写机</h3>
+                    <p class="text-sm text-gray-600">像搭乐高一样写流程文档</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+            <h2 class="text-lg font-bold mb-4">📚 培训内容</h2>
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-tools w-[24px] h-[24px] text-primary flex items-center justify-center"></i>
+                    <span class="text-sm">AI工具的高效使用方法</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-sitemap w-[24px] h-[24px] text-primary flex items-center justify-center"></i>
+                    <span class="text-sm">工作流的结构设计思路</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-users w-[24px] h-[24px] text-primary flex items-center justify-center"></i>
+                    <span class="text-sm">团队间如何分工协作与配合</span>
+                </div>
+            </div>
+        </div>
+        <div class="mb-6">
+            <h2 class="text-lg font-bold mb-4">📅 重要时间</h2>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <i class="far fa-calendar w-[24px] h-[24px] text-primary flex items-center justify-center"></i>
+                        <span class="text-sm">报名截止</span>
+                    </div>
+                    <span class="text-sm text-gray-600">6月11日</span>
+                </div>
+                <div class="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <i class="far fa-clock w-[24px] h-[24px] text-primary flex items-center justify-center"></i>
+                        <span class="text-sm">比赛时间</span>
+                    </div>
+                    <span class="text-sm text-gray-600">6月19日</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed bottom-0 w-full bg-white border-t border-gray-100">
+        <div class="grid grid-cols-4 h-[60px]">
+            <a class="flex flex-col items-center justify-center">
+                <i class="fas fa-home text-primary"></i>
+                <span class="text-xs mt-1">首页</span>
+            </a>
+            <a class="flex flex-col items-center justify-center">
+                <i class="fas fa-compass text-gray-400"></i>
+                <span class="text-xs mt-1">发现</span>
+            </a>
+            <a class="flex flex-col items-center justify-center">
+                <i class="fas fa-bell text-gray-400"></i>
+                <span class="text-xs mt-1">消息</span>
+            </a>
+            <a class="flex flex-col items-center justify-center">
+                <i class="fas fa-user text-gray-400"></i>
+                <span class="text-xs mt-1">我的</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
