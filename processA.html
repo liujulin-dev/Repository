@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=375px, initial-scale=1.0">
+  <title>关怀不设限</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF6B6B',
+            secondary: '#4ECDC4',
+            accent: '#f9fafb'
+          },
+          borderRadius: {
+            'button': '4px'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="w-[375px] min-h-screen bg-white mx-auto relative">
+  <!-- 顶部导航 -->
+  <nav class="fixed top-0 w-full bg-primary text-white px-4 py-3 z-50">
+    <h1 class="text-xl font-bold">关怀不设限</h1>
+  </nav>
+
+  <main class="pt-[60px] pb-[80px] px-4">
+    <!-- 主题背景 -->
+    <section class="mb-6">
+      <h2 class="text-lg font-bold text-primary mb-2">主题背景</h2>
+      <div class="space-y-3 text-sm text-gray-700">
+        <p>在企业日常运转中，员工的入职、成长、生日、节日、健康关怀、乃至离职，每一个节点都承载着情感与记忆，值得被看见、被回应。</p>
+        <p>但现实往往是：</p>
+        <ul class="list-disc list-inside pl-4 text-gray-600">
+          <li>HR一遍遍手动发送祝福</li>
+          <li>员工收到的只是换名字的模板图</li>
+          <li>所谓的“员工关怀”，成了一项项KPI打卡任务</li>
+        </ul>
+        <p>现在，借助 Coze + 我们的AI平台，你将亲手设计一套有温度、有个性的员工关怀工作流——让祝福不再冰冷格式化，而是成为员工真正记住的细节。</p>
+        <p>用AI，重新定义人与人之间的工作连接感。</p>
+      </div>
+    </section>
+
+    <!-- 题目 -->
+    <section class="mb-6">
+      <h2 class="text-lg font-bold text-primary mb-2">题目：</h2>
+      <div class="space-y-2 text-sm text-gray-700 bg-primary/10 p-3 rounded-lg border border-primary/20">
+        <p class="font-semibold">关怀不设限 | 让员工体验“被看见”的感觉</p>
+        <p>用AI设计你理想中的“员工关怀”Agent，自动生成祝福海报+文案，从入职到生日、从纪念日到节日，温度由你定义</p>
+      </div>
+    </section>
+
+    <!-- 你需要做的事 -->
+    <section class="mb-6">
+      <h2 class="text-lg font-bold text-primary mb-2">你需要做的事：</h2>
+      <div class="space-y-4 text-sm text-gray-700">
+        <ol class="list-decimal list-inside space-y-3">
+          <li>
+            <span class="font-semibold">选择一个或多个员工关怀场景:</span>
+            <ul class="list-disc list-inside pl-6 mt-1 text-gray-600">
+              <li>入职欢迎</li>
+              <li>生日祝福</li>
+              <li>入职周年纪念</li>
+            </ul>
+            <p class="pl-6 mt-1 text-xs text-gray-500">(任选其一或多个，自由发挥)</p>
+          </li>
+          <li>
+            <span class="font-semibold">用 Coze + 公司AI平台搭建一个工作流:</span>
+            <ul class="list-disc list-inside pl-6 mt-1 text-gray-600 space-y-1">
+                <li><span class="font-medium">输入:</span> 数据库、知识库</li>
+                <li><span class="font-medium">处理:</span> 贺卡：自动生成祝福文案+配图</li>
+                <li><span class="font-medium">输出:</span> 推送到群聊、自动@等 (附加题)</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 评审标准 -->
+    <section>
+      <h2 class="text-lg font-bold text-primary mb-2">评审标准</h2>
+      <div class="text-sm text-gray-800 overflow-x-auto rounded-lg border border-gray-200 shadow">
+        <table class="min-w-full divide-y divide-gray-200 text-sm">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-3 py-2 text-left font-semibold text-gray-700">#</th>
+              <th class="px-3 py-2 text-left font-semibold text-gray-700">评审项</th>
+              <th class="px-3 py-2 text-center font-semibold text-gray-700">分值</th>
+              <th class="px-3 py-2 text-left font-semibold text-gray-700">要点说明</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-100">
+            <tr>
+              <td class="px-3 py-2">1</td>
+              <td class="px-3 py-2">图文质量</td>
+              <td class="px-3 py-2 text-center">40分</td>
+              <td class="px-3 py-2">生图是否美观，文案是否温暖有趣</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2">2</td>
+              <td class="px-3 py-2">工作流逻辑-技术实现</td>
+              <td class="px-3 py-2 text-center">30分</td>
+              <td class="px-3 py-2">自动化流程是否完整、清晰</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2">3</td>
+              <td class="px-3 py-2">创意表现力 (基于demo不同的创新点)</td>
+              <td class="px-3 py-2 text-center">30分</td>
+              <td class="px-3 py-2">完全按照demo呈现的话不加分</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- 返回按钮 -->
+  <a href="index.html" class="fixed bottom-6 right-6 w-[64px] h-[64px] bg-secondary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition-transform">
+    <i class="fas fa-arrow-left text-2xl"></i>
+  </a>
+</body>
+</html>
