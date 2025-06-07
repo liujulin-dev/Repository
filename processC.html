@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=375px, initial-scale=1.0">
+  <title>从需求到代码</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF6B6B',
+            secondary: '#4ECDC4',
+            accent: '#f9fafb'
+          },
+          borderRadius: {
+            'button': '4px'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="w-[375px] min-h-screen bg-white mx-auto relative">
+  <!-- 顶部导航 -->
+  <nav class="fixed top-0 w-full bg-primary text-white px-4 py-3 z-50">
+    <h1 class="text-xl font-bold">从需求到代码</h1>
+  </nav>
+
+  <main class="pt-[60px] pb-[80px] px-4">
+    <!-- 题目说明 -->
+    <section class="mb-6">
+      <h2 class="text-lg font-bold text-primary mb-2">打造D365 F&O开发的“需求即交付”体验</h2>
+      <div class="space-y-2 text-sm text-gray-700">
+        <div>
+          <p class="font-semibold">输入:</p>
+          <p class="pl-4">一个Excel总需求文档 (包含很多上下文和辅助说明，大概8万字)，与五个子需求</p>
+        </div>
+        <div>
+          <p class="font-semibold">输出:</p>
+          <p class="pl-4">实现这五个子需求的伪代码和实际代码</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 难点 -->
+    <section class="mb-6">
+      <h2 class="text-lg font-bold text-primary mb-2">难点</h2>
+      <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+        <li>需求需要涉及不同模块，模块间如何匹配</li>
+        <li>需求中涉及不同的表字段或接口返回的约定，需要遵循约定</li>
+        <li>需求生成代码过长，会撑爆上下文</li>
+        <li>Excel文档直接分段效果很差，同一个模块的描述会被割开</li>
+      </ul>
+    </section>
+    
+    <!-- 流程 -->
+    <section class="mb-6">
+      <h2 class="text-lg font-bold text-primary mb-2">流程</h2>
+      <div class="space-y-4 text-sm text-gray-700">
+        <ol class="list-decimal list-inside space-y-2">
+          <li>Excel文档先转为md，再录入知识库 (不转MD分段效果很差。这一步使用http节点调API)</li>
+          <li>对于每个子需求:
+            <ul class="list-disc list-inside pl-6 mt-1 space-y-1">
+              <li>使用需求关键词，多轮在知识库中搜索上下文 (LLM+知识库节点做召回和Rerank)</li>
+              <li>搜索好的上下文+需求，一起送入伪代码LLM生成伪代码</li>
+              <li>上下文+伪代码，送入代码LLM生成最终代码</li>
+            </ul>
+          </li>
+          <li>最终五个子需求的伪代码和代码统一放进一个文档，输出 (如无法直接输出文件，可以host一个下载文件服务，直接返回下载链接)</li>
+        </ol>
+      </div>
+    </section>
+    
+    <!-- 评分标准 -->
+    <section class="mb-6">
+      <h2 class="text-lg font-bold text-primary mb-2">评分标准</h2>
+      <div class="text-sm text-gray-800 overflow-x-auto rounded-lg border border-gray-200 shadow">
+        <table class="min-w-full divide-y divide-gray-200 text-sm">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-3 py-2 text-left font-semibold text-gray-700">#</th>
+              <th class="px-3 py-2 text-left font-semibold text-gray-700">评审项</th>
+              <th class="px-3 py-2 text-left font-semibold text-gray-700">要点说明</th>
+              <th class="px-3 py-2 text-center font-semibold text-gray-700">分数</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-100">
+            <tr>
+              <td class="px-3 py-2">1</td>
+              <td class="px-3 py-2">基础功能</td>
+              <td class="px-3 py-2">跑通Baseline: 输入文档分块合理</td>
+              <td class="px-3 py-2 text-center">40</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2">2</td>
+              <td class="px-3 py-2">进阶功能</td>
+              <td class="px-3 py-2">是否最终输出文档而非文本; 是否使用循环进行多轮召回</td>
+              <td class="px-3 py-2 text-center">30</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2">3</td>
+              <td class="px-3 py-2">创意点</td>
+              <td class="px-3 py-2">完全脱离demo呈现的话不加分</td>
+              <td class="px-3 py-2 text-center">30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <!-- 定制案例 -->
+    <section class="mb-6">
+        <h2 class="text-lg font-bold text-primary mb-2">定制案例</h2>
+        <div class="text-sm text-gray-700 space-y-2 bg-gray-50 p-3 rounded-lg border">
+            <p>按组发订单内部相关且发货单状态 == 待同步 时可见</p>
+            <p>点击同步ERP按钮，弹框展示同步ERP页面</p>
+            <p>点击确认同步ERP，校验当前【发货单金额】是否大于客户下信用授权中【剩余额度】，弹框提示“当前客户信用额度已超额，是否继续发货？”</p>
+            <p>点击确认：将发货指令行数据同步至ERP</p>
+            <div class="pl-4">
+              <p>① 接口同步成功后将发货单状态修改为待发货，点击取消按钮关闭弹窗；否，不做提示，正常发货</p>
+              <p>② 接口同步失败后：</p>
+              <div class="pl-6">
+                <p>A和B条件控制发货单同步ERP相同步失败次数方案</p>
+                <p>A条件：...指令会单关联的同步记录中，(待同步、同步失败数)可重复同步，反之则提示“当前指令已同步”</p>
+                <p>B条件：...指令行状态=已创建、已取消的指令行可再次同步至ERP，其余状态行均不可再次同步ERP</p>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 流程图展示 -->
+    <section class="mb-6">
+      <h2 class="text-lg font-bold text-primary mb-2">复杂业务初步测试</h2>
+      <div class="rounded-lg overflow-hidden border shadow cursor-pointer">
+        <img
+          src="https://liujulin-dev.github.io/Repository/ProcessC_Image.png"
+          alt="复杂业务初步测试"
+          class="w-full"
+          onclick="openModal(this.src)"
+        >
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 放大图片 Modal -->
+  <div id="imageModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden">
+    <span class="absolute top-4 right-4 text-white text-3xl cursor-pointer" onclick="closeModal()">×</span>
+    <img id="modalImage" class="max-w-full max-h-full rounded-lg shadow-lg" src="" alt="放大图片">
+  </div>
+
+  <!-- 返回按钮 -->
+  <a href="index.html" class="fixed bottom-6 right-6 w-[64px] h-[64px] bg-secondary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition-transform">
+    <i class="fas fa-arrow-left text-2xl"></i>
+  </a>
+
+  <!-- 模态框控制脚本 -->
+  <script>
+    function openModal(src) {
+      document.getElementById("modalImage").src = src;
+      document.getElementById("imageModal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").classList.add("hidden");
+    }
+
+    // 点击背景关闭
+    document.getElementById("imageModal").addEventListener("click", function(e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
+</body>
+</html>
