@@ -140,15 +140,19 @@
                 </div>
             </div>
 
-            <!-- 视频卡片：移动到此处，作为结尾 -->
+            <!-- 视频卡片：现在可以播放视频 -->
             <div class="bg-gray-800/20 backdrop-blur-md border border-border rounded-2xl p-5 transition-all duration-300 hover:border-primary/60 hover:-translate-y-1">
                 <h3 class="text-lg font-bold mb-4 text-primary flex items-center gap-2"><i class="fas fa-play-circle"></i>赛事速览</h3>
-                <a href="#" class="block relative rounded-xl overflow-hidden group cursor-pointer">
-                    <img src="https://liujulin-dev.github.io/Repository/xuanfa_vedio.mp4" alt="Video thumbnail" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center transition-colors group-hover:bg-black/20">
-                        <i class="fas fa-play text-white text-4xl opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" style="text-shadow: 0 0 15px rgba(0,0,0,0.5);"></i>
-                    </div>
-                </a>
+                <!-- 使用 <video> 标签代替 <a> 和 <img> -->
+                <video 
+                    class="w-full rounded-xl"
+                    controls 
+                    playsinline
+                    poster="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=1887&auto=format&fit=crop"
+                    src="https://liujulin-dev.github.io/Repository/xuanfa_vedio.mp4">
+                    <!-- 上面的 src 是一个占位符视频，请替换为您自己的.mp4视频链接 -->
+                    抱歉，您的浏览器不支持播放该视频。
+                </video>
             </div>
 
         </section>
