@@ -36,7 +36,10 @@
 </head>
 <body class="w-[375px] min-h-[762px] bg-white mx-auto relative">
     <nav class="fixed top-0 w-full bg-primary text-white px-4 py-3 z-50">
-        <h1 class="text-xl font-bold">全员赋能大赛</h1>
+        <div class="flex items-center justify-between">
+            <h1 class="text-xl font-bold">全员赋能大赛</h1>
+            <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22white%22%3E%3Cpath%20d%3D%22M12.378%201.602a.75.75%200%2000-.756%200L3.004%206.76a.75.75%200%2000.319%201.398l4.03-1.007v4.83c0%20.814.223%201.57.62%202.226l-2.433%202.434a.75.75%200%20001.06%201.06l2.434-2.433L12%2021.75l2.965-2.965%202.433%202.433a.75.75%200%20001.06-1.06l-2.433-2.434a3.75%203.75%200%2000.62-2.226v-4.83l4.03%201.007a.75.75%200%2000.32-1.398L12.378%201.602zM12%2015.75a2.25%202.25%200%20100-4.5%202.25%202.25%200%20000%204.5z%22%20/%3E%3C/svg%3E" alt="Logo" class="h-8 w-8">
+        </div>
     </nav>
 
     <main class="pt-[60px] pb-[80px]">
@@ -52,6 +55,16 @@
         </div>
 
         <section class="px-4 py-6">
+            <div class="bg-white rounded-lg shadow-lg p-4 mb-6">
+                <h3 class="text-lg font-bold mb-4 text-primary">活动介绍</h3>
+                <div class="space-y-3 text-sm text-gray-700 leading-relaxed">
+                    <p>这是全员赋能体系下的一场重头戏！</p>
+                    <p>我们即将举办一场真正硬核的实操演练——</p>
+                    <p class="font-semibold text-gray-800">AI驱动·工作流实战Workshop大赛！</p>
+                    <p>一次围绕AI、效率与创新的"升级版Hackathon"！不仅动脑，更要动手！</p>
+                </div>
+            </div>
+
             <div class="bg-white rounded-lg shadow-lg p-4 mb-6">
                 <h3 class="text-lg font-bold mb-4 text-primary">三大高能赛道</h3>
                 <div class="space-y-4">
@@ -124,9 +137,10 @@
     </main>
 
     <!-- 报名悬浮按钮 -->
-    <button class="fixed bottom-6 right-6 w-[64px] h-[64px] bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition-transform">
-        <i class="fas fa-clipboard-check text-2xl"></i>
-    </button>
+    <a href="#" class="fixed bottom-6 right-6 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition-transform px-5 space-x-2.5">
+        <i class="fas fa-clipboard-check text-xl"></i>
+        <span class="font-bold">报名</span>
+    </a>
 
 </body>
 </html>
