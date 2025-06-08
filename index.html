@@ -3,143 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=375px, initial-scale=1.0">
-    <title>全员赋能大赛</title>
+    <title>全员赋能大赛 - AI驱动未来</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- 引入更具现代感的字体 Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        // 将 Inter 设置为默认无衬线字体
+                        sans: ['Inter', 'sans-serif'],
+                    },
                     colors: {
-                        primary: '#FF6B6B',
-                        secondary: '#4ECDC4'
+                        // 定义全新的、充满科技感的颜色
+                        'primary': '#6366F1', // 电光紫/蓝
+                        'secondary': '#38BDF8', // 天空蓝
+                        'dark': '#0D1117', // 深邃背景色
+                        'light': '#E2E8F0', // 亮色文字
+                        'subtle': '#94A3B8', // 次要文字
+                        'border': 'rgba(148, 163, 184, 0.2)', // 边框颜色
+                    },
+                    boxShadow: {
+                        // 自定义辉光效果
+                        'glow-primary': '0 0 20px rgba(99, 102, 241, 0.5)',
+                        'glow-secondary': '0 0 20px rgba(56, 189, 248, 0.5)',
                     },
                     borderRadius: {
-                        'none': '0px',
-                        'sm': '2px',
-                        DEFAULT: '4px',
-                        'md': '8px',
-                        'lg': '12px',
-                        'xl': '16px',
-                        '2xl': '20px',
-                        '3xl': '24px',
-                        'full': '9999px',
-                        'button': '4px'
+                        'xl': '1rem', // 统一使用更圆润的圆角
+                        '2xl': '1.5rem',
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* 为背景添加微妙的径向渐变，增加深邃感 */
+        body {
+            background-color: #0D1117;
+            background-image: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.1), transparent 50%);
+        }
+    </style>
 </head>
-<body class="w-[375px] min-h-[762px] bg-white mx-auto relative">
-    <nav class="fixed top-0 w-full bg-primary text-white px-4 py-3 z-50">
-        <div class="flex items-center justify-between">
-            <h1 class="text-xl font-bold">全员赋能大赛</h1>
-            <img src="https://liujulin-dev.github.io/Repository/logo.png" alt="Logo" class="h-8 w-auto">
+<body class="w-[375px] min-h-screen font-sans bg-dark text-light mx-auto relative">
+    
+    <!-- 导航栏：采用玻璃拟态效果，悬浮于内容之上 -->
+    <nav class="fixed top-0 w-full bg-dark/70 backdrop-blur-lg border-b border-border z-50">
+        <div class="flex items-center justify-between px-4 py-3">
+            <h1 class="text-xl font-bold text-light">全员赋能大赛</h1>
+            <img src="https://liujulin-dev.github.io/Repository/logo.png" alt="Logo" class="h-8 w-auto opacity-90">
         </div>
     </nav>
 
-    <main class="pt-[60px] pb-[80px]">
-        <div class="relative h-[200px] overflow-hidden">
-            <img src="https://ai-public.mastergo.com/ai/img_res/e1c8355d3b323281ef96b67a0cef08da.jpg" 
+    <main class="pt-[60px] pb-[90px]">
+        <!-- Banner：使用更具科技感的文字样式和遮罩 -->
+        <div class="relative h-[220px] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop" 
                  class="w-full h-full object-cover" alt="banner">
-            <div class="absolute inset-0 bg-gradient-to-b from-primary/50 to-primary/80 flex items-center justify-center">
-                <div class="text-center text-white">
-                    <h2 class="text-2xl font-bold mb-2">热身赛 Workshop-Hackathon 2.5</h2>
-                    <p class="text-sm">全员点燃实战力！</p>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark to-dark/30 flex items-center justify-center">
+                <div class="text-center text-white px-4">
+                    <h2 class="text-3xl font-black mb-2 uppercase" style="text-shadow: 0 0 10px rgba(99, 102, 241, 0.6);">Hackathon 2.5</h2>
+                    <p class="text-md text-subtle">AI驱动 · 全员点燃实战力</p>
                 </div>
             </div>
         </div>
 
-        <section class="px-4 py-6">
-            <div class="bg-white rounded-lg shadow-lg p-4 mb-6">
-                <h3 class="text-lg font-bold mb-4 text-primary">活动介绍</h3>
-                <div class="space-y-3 text-sm text-gray-700 leading-relaxed">
+        <section class="px-4 py-6 space-y-6">
+            
+            <!-- 卡片：统一采用玻璃拟态风格 -->
+            <div class="bg-gray-800/20 backdrop-blur-md border border-border rounded-2xl p-5 transition-all duration-300 hover:border-primary/60 hover:-translate-y-1">
+                <h3 class="text-lg font-bold mb-4 text-primary flex items-center gap-2"><i class="fas fa-bullhorn"></i>活动介绍</h3>
+                <div class="space-y-3 text-sm text-subtle leading-relaxed">
                     <p>这是全员赋能体系下的一场重头戏！</p>
                     <p>我们即将举办一场真正硬核的实操演练——</p>
-                    <p class="font-semibold text-gray-800">AI驱动·工作流实战Workshop大赛！</p>
+                    <p class="font-semibold text-light">🔧 AI驱动·工作流实战Workshop大赛！</p>
                     <p>一次围绕AI、效率与创新的"升级版Hackathon"！不仅动脑，更要动手！</p>
                 </div>
             </div>
 
-            <div class="bg-white rounded-lg shadow-lg p-4 mb-6">
-                <h3 class="text-lg font-bold mb-4 text-primary">三大高能赛道</h3>
+            <div class="bg-gray-800/20 backdrop-blur-md border border-border rounded-2xl p-5 transition-all duration-300 hover:border-primary/60 hover:-translate-y-1">
+                <h3 class="text-lg font-bold mb-4 text-primary flex items-center gap-2"><i class="fas fa-rocket"></i>三大高能赛道</h3>
                 <div class="space-y-4">
+                    <!-- 赛道链接：优化了图标和悬浮效果 -->
                     <a href="https://liujulin-dev.github.io/Repository/processA.html" class="block">
-                        <div class="flex items-start space-x-3 p-3 bg-secondary/10 rounded-lg hover:bg-secondary/20 transition">
-                            <i class="fas fa-heart text-secondary w-6 h-6 flex items-center justify-center"></i>
+                        <div class="flex items-center space-x-4 p-3 rounded-xl hover:bg-primary/10 transition-colors duration-200">
+                            <div class="w-10 h-10 flex-shrink-0 rounded-full bg-primary/20 flex items-center justify-center"><i class="fas fa-heart text-primary"></i></div>
                             <div>
-                                <h4 class="font-bold mb-1">关怀不设限</h4>
-                                <p class="text-sm text-gray-600">让员工体验"被看见"的感觉</p>
+                                <h4 class="font-bold text-light">关怀不设限</h4>
+                                <p class="text-xs text-subtle">让员工体验"被看见"的感觉</p>
                             </div>
                         </div>
                     </a>
                     <a href="https://liujulin-dev.github.io/Repository/processC.html" class="block">
-                        <div class="flex items-start space-x-3 p-3 bg-primary/10 rounded-lg hover:bg-primary/20 transition">
-                            <i class="fas fa-code text-primary w-6 h-6 flex items-center justify-center"></i>
+                        <div class="flex items-center space-x-4 p-3 rounded-xl hover:bg-primary/10 transition-colors duration-200">
+                             <div class="w-10 h-10 flex-shrink-0 rounded-full bg-primary/20 flex items-center justify-center"><i class="fas fa-code text-primary"></i></div>
                             <div>
-                                <h4 class="font-bold mb-1">从需求到代码</h4>
-                                <p class="text-sm text-gray-600">打造 D365 F&O 开发的"需求即交付"体验</p>
+                                <h4 class="font-bold text-light">从需求到代码</h4>
+                                <p class="text-xs text-subtle">打造"需求即交付"的开发体验</p>
                             </div>
                         </div>
                     </a>
                     <a href="https://liujulin-dev.github.io/Repository/processB.html" class="block">
-                        <div class="flex items-start space-x-3 p-3 bg-secondary/10 rounded-lg hover:bg-secondary/20 transition">
-                            <i class="fas fa-sitemap text-secondary w-6 h-6 flex items-center justify-center"></i>
+                        <div class="flex items-center space-x-4 p-3 rounded-xl hover:bg-primary/10 transition-colors duration-200">
+                             <div class="w-10 h-10 flex-shrink-0 rounded-full bg-primary/20 flex items-center justify-center"><i class="fas fa-sitemap text-primary"></i></div>
                             <div>
-                                <h4 class="font-bold mb-1">流程速写机</h4>
-                                <p class="text-sm text-gray-600">像搭乐高一样写流程文档</p>
+                                <h4 class="font-bold text-light">流程速写机</h4>
+                                <p class="text-xs text-subtle">像搭乐高一样写流程文档</p>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
+            
+            <!-- 时间与培训卡片并排，节省空间 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-800/20 backdrop-blur-md border border-border rounded-2xl p-5 transition-all duration-300 hover:border-secondary/60 hover:-translate-y-1">
+                    <h3 class="text-lg font-bold mb-4 text-secondary flex items-center gap-2"><i class="far fa-calendar-alt"></i>重要时间</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center justify-between"><span class="text-subtle">报名截止</span><span class="font-bold text-light">6月11日</span></div>
+                        <div class="flex items-center justify-between"><span class="text-subtle">比赛时间</span><span class="font-bold text-light">6月19日</span></div>
+                        <div class="flex items-center justify-between"><span class="text-subtle">实战时长</span><span class="font-bold text-light">5小时</span></div>
+                    </div>
+                </div>
 
-            <div class="bg-white rounded-lg shadow-lg p-4 mb-6">
-                <h3 class="text-lg font-bold mb-4">重要时间</h3>
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm">报名截止</span>
-                        <span class="text-primary font-bold">6月11日</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm">比赛时间</span>
-                        <span class="text-primary font-bold">6月19日</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm">实战时长</span>
-                        <span class="text-primary font-bold">5小时</span>
+                <div class="bg-gray-800/20 backdrop-blur-md border border-border rounded-2xl p-5 transition-all duration-300 hover:border-secondary/60 hover:-translate-y-1">
+                    <h3 class="text-lg font-bold mb-4 text-secondary flex items-center gap-2"><i class="fas fa-chalkboard-teacher"></i>培训内容</h3>
+                    <div class="space-y-3 text-sm text-subtle">
+                        <div class="flex items-center gap-3"><i class="fas fa-robot text-secondary w-4 text-center"></i><span>AI工具的高效使用</span></div>
+                        <div class="flex items-center gap-3"><i class="fas fa-sitemap text-secondary w-4 text-center"></i><span>工作流的结构设计</span></div>
+                        <div class="flex items-center gap-3"><i class="fas fa-users text-secondary w-4 text-center"></i><span>团队的分工与协作</span></div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-lg shadow-lg p-4">
-                <h3 class="text-lg font-bold mb-4">培训内容</h3>
-                <div class="space-y-3">
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-robot text-secondary w-6 h-6 flex items-center justify-center"></i>
-                        <span class="text-sm">AI工具的高效使用方法</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-sitemap text-secondary w-6 h-6 flex items-center justify-center"></i>
-                        <span class="text-sm">工作流的结构设计思路</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-users text-secondary w-6 h-6 flex items-center justify-center"></i>
-                        <span class="text-sm">团队间如何分工协作与配合</span>
-                    </div>
-                </div>
-            </div>
         </section>
     </main>
 
-    <!-- 报名悬浮按钮 -->
-    <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=bsMbII7n9USj1jLKUpBTS-otk_WFO6ZGlKiFuZjrg1pUQk5BTDVPQzcxVUkxUlBXOFJZUTJIVUdZMC4u" class="fixed bottom-6 right-6 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition-transform px-5 space-x-2.5">
+    <!-- 报名悬浮按钮：使用渐变色和辉光效果 -->
+    <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=bsMbII7n9USj1jLKUpBTS-otk_WFO6ZGlKiFuZjrg1pUQk5BTDVPQzcxVUkxUlBXOFJZUTJIVUdZMC4u" 
+       class="fixed bottom-6 right-6 h-14 bg-gradient-to-r from-primary to-secondary text-white rounded-full shadow-lg shadow-glow-primary flex items-center justify-center hover:scale-105 transition-transform px-6 space-x-2.5">
         <i class="fas fa-clipboard-check text-xl"></i>
-        <span class="font-bold">报名</span>
+        <span class="font-bold">立即报名</span>
     </a>
 
 </body>
