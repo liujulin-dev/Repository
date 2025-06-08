@@ -3,150 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=375px, initial-scale=1.0">
-  <title>流程速写机 - 全员赋能大赛</title>
+  <title>赛道B: 流程速写机</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 引入更具现代感的字体 Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
           colors: {
-            primary: '#FF6B6B',
-            secondary: '#4ECDC4',
-            accent: '#f9fafb'
+            'primary': '#6366F1', // 电光紫/蓝
+            'secondary': '#38BDF8', // 天空蓝
+            'dark': '#0D1117', // 深邃背景色
+            'light': '#E2E8F0', // 亮色文字
+            'subtle': '#94A3B8', // 次要文字
+            'border': 'rgba(148, 163, 184, 0.2)', // 边框颜色
+          },
+          boxShadow: {
+            'glow-secondary': '0 0 20px rgba(56, 189, 248, 0.5)',
           },
           borderRadius: {
-            'button': '4px'
+            'xl': '1rem',
+            '2xl': '1.5rem',
           }
         }
       }
     }
   </script>
+  <style>
+    body {
+      background-color: #0D1117;
+      background-image: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.1), transparent 50%);
+    }
+  </style>
 </head>
-<body class="w-[375px] min-h-screen bg-white mx-auto relative">
-  <!-- 顶部导航 -->
-  <nav class="fixed top-0 w-full bg-primary text-white px-4 py-3 z-50">
-    <h1 class="text-xl font-bold">流程速写机</h1>
+<body class="w-[375px] min-h-screen font-sans bg-dark text-light mx-auto relative">
+  
+  <!-- 导航栏：采用玻璃拟态效果 -->
+  <nav class="fixed top-0 w-full bg-dark/70 backdrop-blur-lg border-b border-border z-50">
+    <div class="flex items-center px-4 py-3">
+        <h1 class="text-xl font-bold text-light">流程速写机</h1>
+    </div>
   </nav>
 
-  <main class="pt-[60px] pb-[80px] px-4">
-    <!-- 题目说明 -->
-    <section class="mb-6">
-      <h2 class="text-lg font-bold text-primary mb-2">题目</h2>
-      <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-        <li>输入流程类文字内容并生成Visio流程图</li>
-        <li>根据流程图内容自动生成文字说明</li>
-      </ul>
-    </section>
+  <main class="pt-[70px] pb-[90px] px-4 space-y-6">
 
-    <!-- TODO事项 -->
-    <section class="mb-6">
-      <h2 class="text-lg font-bold text-primary mb-2">具体 TODO</h2>
-      <div class="space-y-4 text-sm text-gray-700">
-        <div>
-          <p class="font-semibold">1. 输入流程类文字并生成Visio流程图</p>
-          <ul class="list-decimal list-inside pl-4">
-            <li>Diffy平台创建工作流</li>
-            <li>LLM分析并提取流程结构</li>
-            <li>使用开源工具生成流程图结构图</li>
-            <li>使用Python文件转为Visio图</li>
-          </ul>
+    <!-- 题目卡片 (高亮) -->
+    <div class="bg-primary/10 backdrop-blur-md border border-primary/50 rounded-2xl p-5">
+      <h2 class="text-lg font-bold mb-4 text-primary flex items-center gap-2"><i class="fas fa-trophy"></i>挑战任务</h2>
+      <div class="space-y-3 text-sm">
+        <div class="flex items-start gap-3">
+            <i class="fas fa-file-alt text-primary/80 mt-1"></i>
+            <p class="text-light">输入流程类文字内容并生成Visio流程图</p>
         </div>
-        <div>
-          <p class="font-semibold">2. 提供流程图生成解读文字说明</p>
-          <ul class="list-decimal list-inside pl-4">
-            <li>Diffy平台创建工作流</li>
-            <li>调用接口获取流程图结构</li>
-            <li>分析流程图输出</li>
-            <li>输出标准解读稿</li>
-          </ul>
+        <div class="flex items-start gap-3">
+            <i class="fas fa-file-code text-primary/80 mt-1"></i>
+            <p class="text-light">根据流程图内容自动生成文字说明</p>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- 流程图展示 -->
-    <section class="mb-6">
-      <h2 class="text-lg font-bold text-primary mb-2">流程图展示</h2>
-      <div class="rounded-lg overflow-hidden border shadow cursor-pointer">
+    <!-- 行动清单卡片 -->
+    <div class="bg-gray-800/20 backdrop-blur-md border border-border rounded-2xl p-5">
+      <h2 class="text-lg font-bold mb-4 text-primary flex items-center gap-2"><i class="fas fa-tasks"></i>行动清单</h2>
+      <div class="space-y-5 text-sm">
+          <!-- 任务 1 -->
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+                <span class="flex-shrink-0 w-6 h-6 bg-primary/20 text-primary font-bold text-xs rounded-full flex items-center justify-center">1</span>
+                <h4 class="font-bold text-light">Text ➔ Visio</h4>
+            </div>
+            <ul class="pl-9 space-y-1.5 text-subtle">
+                <li>› Diffy平台创建工作流</li>
+                <li>› LLM分析并提取流程结构</li>
+                <li>› 使用开源工具生成结构图</li>
+                <li>› 使用Python文件转为Visio图</li>
+            </ul>
+          </div>
+          <!-- 任务 2 -->
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+                <span class="flex-shrink-0 w-6 h-6 bg-primary/20 text-primary font-bold text-xs rounded-full flex items-center justify-center">2</span>
+                <h4 class="font-bold text-light">Visio ➔ Text</h4>
+            </div>
+            <ul class="pl-9 space-y-1.5 text-subtle">
+                <li>› Diffy平台创建工作流</li>
+                <li>› 调用接口获取流程图结构</li>
+                <li>› 分析流程图输出</li>
+                <li>› 输出标准解读稿</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+
+    <!-- 流程图展示卡片 -->
+    <div class="bg-gray-800/20 backdrop-blur-md border border-border rounded-2xl p-5">
+      <h2 class="text-lg font-bold mb-4 text-primary flex items-center gap-2"><i class="fas fa-image"></i>效果展示</h2>
+      <div class="rounded-lg overflow-hidden border-2 border-border cursor-pointer transition-all hover:border-secondary/60">
         <img
           src="https://liujulin-dev.github.io/Repository/ProcessB_Image.png"
           alt="流程图展示"
-          class="w-full"
+          class="w-full block"
           onclick="openModal(this.src)"
         >
       </div>
-    </section>
+    </div>
 
-    <!-- 评分标准 -->
-    <section>
-      <h2 class="text-lg font-bold text-primary mb-2">评分标准</h2>
-      <div class="text-sm text-gray-800 overflow-x-auto rounded-lg border border-gray-200 shadow">
-        <table class="min-w-full divide-y divide-gray-200 text-sm">
-          <thead class="bg-gray-50">
-            <tr>
-              <th class="px-3 py-2 text-left font-semibold text-gray-700">#</th>
-              <th class="px-3 py-2 text-left font-semibold text-gray-700">项目</th>
-              <th class="px-3 py-2 text-left font-semibold text-gray-700">评分项</th>
-              <th class="px-3 py-2 text-center font-semibold text-gray-700">分数</th>
-            </tr>
-          </thead>
-          <tbody class="bg-white divide-y divide-gray-100">
-            <!-- Text 2 Visio -->
-            <tr class="bg-primary/10">
-              <td colspan="4" class="px-3 py-2 font-bold text-primary">Text 2 Visio</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-2">1</td>
-              <td class="px-3 py-2">Text 2 Visio</td>
-              <td class="px-3 py-2">分析流程图生成结构化文本</td>
-              <td class="px-3 py-2 text-center">40</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-2">2</td>
-              <td></td>
-              <td class="px-3 py-2">HTTP请求获取Visio文件</td>
-              <td class="px-3 py-2 text-center">20</td>
-            </tr>
-            <tr class="bg-gray-50 font-bold">
-              <td colspan="3" class="px-3 py-2 text-right">小计：</td>
-              <td class="px-3 py-2 text-center">60</td>
-            </tr>
-
-            <!-- Visio 2 Text -->
-            <tr class="bg-primary/10">
-              <td colspan="4" class="px-3 py-2 font-bold text-primary">Visio 2 Text</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-2">3</td>
-              <td class="px-3 py-2">Visio 2 Text</td>
-              <td class="px-3 py-2">完成工作流搭建、跑通</td>
-              <td class="px-3 py-2 text-center">30</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-2">4</td>
-              <td class="px-3 py-2">按场景分类</td>
-              <td class="px-3 py-2">能够按输入内容区分场景</td>
-              <td class="px-3 py-2 text-center">10</td>
-            </tr>
-            <tr class="bg-gray-50 font-bold">
-              <td colspan="3" class="px-3 py-2 text-right">小计：</td>
-              <td class="px-3 py-2 text-center">40</td>
-            </tr>
-          </tbody>
-        </table>
+    <!-- 评审标准卡片 (全新列表化设计) -->
+    <div class="bg-gray-800/20 backdrop-blur-md border border-border rounded-2xl p-5">
+      <h2 class="text-lg font-bold mb-4 text-primary flex items-center gap-2"><i class="fas fa-award"></i>评审标准</h2>
+      <div class="space-y-6">
+        <!-- Text 2 Visio 部分 -->
+        <div>
+            <div class="flex justify-between items-center mb-3 pb-2 border-b border-border">
+                <h3 class="font-bold text-secondary">Text ➔ Visio</h3>
+                <span class="font-black text-lg text-secondary">60<span class="text-xs font-medium">分</span></span>
+            </div>
+            <div class="space-y-3 text-sm">
+                <div class="flex justify-between items-center"><span class="text-subtle">分析生成结构化文本</span><span class="font-bold text-light">40分</span></div>
+                <div class="flex justify-between items-center"><span class="text-subtle">HTTP请求获取Visio文件</span><span class="font-bold text-light">20分</span></div>
+            </div>
+        </div>
+        <!-- Visio 2 Text 部分 -->
+        <div>
+            <div class="flex justify-between items-center mb-3 pb-2 border-b border-border">
+                <h3 class="font-bold text-secondary">Visio ➔ Text</h3>
+                <span class="font-black text-lg text-secondary">40<span class="text-xs font-medium">分</span></span>
+            </div>
+            <div class="space-y-3 text-sm">
+                <div class="flex justify-between items-center"><span class="text-subtle">完成工作流搭建、跑通</span><span class="font-bold text-light">30分</span></div>
+                <div class="flex justify-between items-center"><span class="text-subtle">能够按输入内容区分场景</span><span class="font-bold text-light">10分</span></div>
+            </div>
+        </div>
       </div>
-    </section>
+    </div>
+
   </main>
 
   <!-- 放大图片 Modal -->
-  <div id="imageModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden">
-    <span class="absolute top-4 right-4 text-white text-3xl cursor-pointer" onclick="closeModal()">&times;</span>
+  <div id="imageModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+    <span class="absolute top-4 right-5 text-white text-4xl cursor-pointer hover:opacity-80 transition-opacity" onclick="closeModal()">×</span>
     <img id="modalImage" class="max-w-full max-h-full rounded-lg shadow-lg" src="" alt="放大图片">
   </div>
 
   <!-- 返回按钮 -->
-  <a href="index.html" class="fixed bottom-6 right-6 w-[64px] h-[64px] bg-secondary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition-transform">
-    <i class="fas fa-arrow-left text-2xl"></i>
+  <a href="index.html" class="fixed bottom-6 right-6 w-14 h-14 bg-secondary text-white rounded-full shadow-lg shadow-glow-secondary flex items-center justify-center hover:scale-105 transition-transform">
+    <i class="fas fa-arrow-left text-xl"></i>
   </a>
 
   <!-- 模态框控制脚本 -->
