@@ -97,49 +97,77 @@
                 </div>
             </div>
 
-            <!-- 优化后的三大高能赛道卡片 -->
-            <div class="bg-gray-800/20 backdrop-blur-md border border-border rounded-2xl p-5 transition-all duration-300 hover:border-primary/60 hover:-translate-y-1">
-                <h3 class="text-lg font-bold mb-4 text-primary flex items-center gap-2"><i class="fas fa-rocket"></i>三大高能赛道</h3>
-                <div class="space-y-2">
-                    <!-- 赛道链接：增加 group 类和右侧箭头 -->
-                    <a href="https://liujulin-dev.github.io/Repository/processA.html" class="block group">
-                        <div class="flex items-center justify-between space-x-4 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:-translate-y-0.5">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-10 h-10 flex-shrink-0 rounded-full bg-primary/20 flex items-center justify-center"><i class="fas fa-heart text-primary"></i></div>
-                                <div>
-                                    <h4 class="font-bold text-light">关怀不设限</h4>
-                                    <p class="text-xs text-subtle">让员工体验"被看见"的感觉</p>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-right text-subtle/50 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300"></i>
-                        </div>
-                    </a>
-                    <a href="https://liujulin-dev.github.io/Repository/processC.html" class="block group">
-                         <div class="flex items-center justify-between space-x-4 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:-translate-y-0.5">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-10 h-10 flex-shrink-0 rounded-full bg-primary/20 flex items-center justify-center"><i class="fas fa-code text-primary"></i></div>
-                                <div>
-                                    <h4 class="font-bold text-light">从需求到代码</h4>
-                                    <p class="text-xs text-subtle">打造"需求即交付"的开发体验</p>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-right text-subtle/50 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300"></i>
-                        </div>
-                    </a>
-                    <a href="https://liujulin-dev.github.io/Repository/processB.html" class="block group">
-                         <div class="flex items-center justify-between space-x-4 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:-translate-y-0.5">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-10 h-10 flex-shrink-0 rounded-full bg-primary/20 flex items-center justify-center"><i class="fas fa-sitemap text-primary"></i></div>
-                                <div>
-                                    <h4 class="font-bold text-light">流程速写机</h4>
-                                    <p class="text-xs text-subtle">像搭乐高一样写流程文档</p>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-right text-subtle/50 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300"></i>
-                        </div>
-                    </a>
+            <!-- 优化后的三大高能赛道卡片（新增动态图标和动画） -->
+<div class="bg-gray-800/20 backdrop-blur-md border border-border rounded-2xl p-5 transition-all duration-300 hover:border-primary/60 hover:-translate-y-1">
+    <h3 class="text-lg font-bold mb-4 text-primary flex items-center gap-2">
+        <i class="fas fa-rocket animate-bounce"></i>三大高能赛道
+    </h3>
+    <div class="space-y-2">
+
+        <!-- 赛道 1 -->
+        <a href="https://liujulin-dev.github.io/Repository/processA.html" class="block group">
+            <div class="flex items-center justify-between space-x-4 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:-translate-y-0.5">
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-pink-400 to-red-500 animate-pulse shadow-lg flex items-center justify-center">
+                        <i class="fas fa-heart text-white animate-bounce"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-light">关怀不设限</h4>
+                        <p class="text-xs text-subtle">让员工体验"被看见"的感觉</p>
+                    </div>
                 </div>
+                <i class="fas fa-chevron-right text-subtle/50 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300"></i>
             </div>
+        </a>
+
+        <!-- 赛道 2 -->
+        <a href="https://liujulin-dev.github.io/Repository/processC.html" class="block group">
+            <div class="flex items-center justify-between space-x-4 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:-translate-y-0.5">
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-green-400 to-blue-500 animate-spin-slow shadow-lg flex items-center justify-center">
+                        <i class="fas fa-code text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-light">从需求到代码</h4>
+                        <p class="text-xs text-subtle">打造"需求即交付"的开发体验</p>
+                    </div>
+                </div>
+                <i class="fas fa-chevron-right text-subtle/50 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300"></i>
+            </div>
+        </a>
+
+        <!-- 赛道 3 -->
+        <a href="https://liujulin-dev.github.io/Repository/processB.html" class="block group">
+            <div class="flex items-center justify-between space-x-4 p-3 rounded-xl hover:bg-primary/10 transition-all duration-300 hover:-translate-y-0.5">
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-yellow-400 to-pink-500 shadow-lg flex items-center justify-center animate-wiggle">
+                        <i class="fas fa-sitemap text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-light">流程速写机</h4>
+                        <p class="text-xs text-subtle">像搭乐高一样写流程文档</p>
+                    </div>
+                </div>
+                <i class="fas fa-chevron-right text-subtle/50 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300"></i>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- 额外添加的自定义动画样式 -->
+<style>
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+.animate-spin-slow {
+  animation: spin 4s linear infinite;
+}
+</style>
+
             
             <!-- 时间与培训卡片并排，节省空间 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
